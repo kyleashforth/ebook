@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBook</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">eBook</a>
+    <a href="library.html" class="nav-link">Библиотека</a>
+    <div class="auth">
+      <button id="auth-btn" class="auth-btn">Войти</button>
+      <div id="profile-menu" class="profile-menu" style="display: none;">
+        <span class="profile-icon">👤</span>
+        <div class="profile-dropdown" style="display: none;">
+          <button id="switch-user-btn">Сменить пользователя</button>
+          <button id="sign-out-btn">Выйти</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="quotes-section">
+      <h2>Вдохновение</h2>
+      <div class="quotes-carousel">
+        <div class="quote-item"></div>
+      </div>
+    </section>
+
+    <section id="new-books-section">
+      <h2>Новинки</h2>
+      <div class="books-grid" id="new-books-grid"></div>
+    </section>
+
+    <section id="popular-books-section">
+      <h2>Популярное</h2>
+      <div class="books-grid" id="popular-books-grid"></div>
+    </section>
+
+    <div class="library-button">
+      <a href="library.html" class="btn">В библиотеку</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 eBook</p>
+  </footer>
+
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <button class="close">×</button>
+      <h2 id="modal-title">Вход</h2>
+      <form id="auth-form">
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Электронная почта" required>
+          <p class="error-message" id="email-error" style="display: none;"></p>
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" placeholder="Пароль" required>
+          <p class="error-message" id="password-error" style="display: none;"></p>
+        </div>
+        <button type="submit" id="submit-btn">Войти</button>
+        <p id="toggle-auth">Нет аккаунта? Зарегистрируйтесь</p>
+      </form>
+    </div>
+  </div>
+
+  <div id="book-detail-modal" class="modal">
+    <div class="modal-content book-detail-content">
+      <button class="close">×</button>
+      <div class="book-detail">
+        <div class="book-detail-image">
+          <img id="detail-book-image" src="" alt="Обложка книги">
+          <button id="read-btn" onclick="window.open('reader.html', '_blank')">Читать</button>
+        </div>
+        <div class="book-detail-text">
+          <h2 id="detail-book-title">Загрузка...</h2>
+          <p id="detail-book-author">Загрузка...</p>
+          <div class="annotation-card">
+            <p id="detail-book-annotation">Загрузка...</p>
+          </div>
+          <div id="reviews-section">
+            <h3>Отзывы</h3>
+            <form id="review-form">
+              <textarea id="review-text" placeholder="Ваш отзыв" required></textarea>
+              <button type="submit">Отправить</button>
+            </form>
+            <div id="reviews-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="scripts.js"></script>
+</body>
+</html>
